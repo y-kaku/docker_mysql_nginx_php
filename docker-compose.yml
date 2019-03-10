@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.6.38
+    ports:
+      - "13306:3306"
+    environment:
+#      - "MYSQL_ALLOW_EMPTY_PASSWORD=true"
+      - "MYSQL_ROOT_PASSWORD=password"
+      - "MYSQL_DATABASE=sample_db"
+    volumes:
+      - ./db/mysql_data:/var/lib/mysql
+      - ./mysql-confd:/etc/mysql/conf.d
+      - ./mysql-log:/var/log/mysql
+      - ./sql:/docker-entrypoint-initdb.d

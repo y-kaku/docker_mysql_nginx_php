@@ -1,0 +1,8 @@
+[mysqld]
+autocommit=0
+character_set_server=utf8mb4
+general-log=1
+general-log-file=/var/log/mysql/query.log
+slow_query_log=true
+slow_query_log_file=/var/log/mysql/mysql-slow.sql
+long_query_time =0.5
